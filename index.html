@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Message Creater</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            font-size: 62.5%;
+            font-family: "Story Script", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body{
+            width: 100vw;
+            height: 100%;
+            background: #130e1d;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        h1{
+            font-size: 3.5rem;
+            color: gold;
+            text-align: center;
+            margin-top: 10rem;
+            font-family: "Story Script", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            letter-spacing: 0.1rem;
+
+        }
+
+        .btn_container{
+            width: 80%;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 15rem;
+            margin-left: 10%;
+            flex-wrap: wrap;
+        }
+
+        button{
+            padding: 1.5rem 3rem;
+            font-size: 3rem;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            background: linear-gradient(145deg, #32293f, #100c16);
+            color: gold;
+            box-shadow: 0 0 10px gold;
+            font-family: "Story Script", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin: 5rem;
+            transition: all 0.3s ease;
+        }
+
+        button:hover{
+            transform: scale(1.1);
+            background: linear-gradient(145deg, #100c16, #32293f);
+        }
+
+        .hide{
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Secret Message Creater</h1>
+
+    <div class="btn_container">
+        <button id="encrypt">Encrypt Message</button>
+        <button id="decrypt">Decrypt Message</button>
+    </div>
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
