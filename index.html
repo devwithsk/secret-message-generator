@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secret Message Creater</title>
+    <title>Secret Message Gnerator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Story+Script&display=swap" rel="stylesheet">
 
     <style>
         *{
@@ -33,7 +33,7 @@
             font-size: 3.5rem;
             color: gold;
             text-align: center;
-            margin-top: 10rem;
+            margin-top: 5rem;
             font-family: "Story Script", sans-serif;
             font-weight: 600;
             font-style: normal;
@@ -74,6 +74,29 @@
             background: linear-gradient(145deg, #100c16, #32293f);
         }
 
+        .en_msg_section{
+            width: 90%;
+            height: 70vh;
+            margin-left: 5%;
+            margin-top: 6rem;
+            display: flex;
+        }
+
+        .en_msg_section .input_section, .en_msg_section .output_section{
+            width:50%;
+            height: 100%;
+            background-color: rgb(173, 76, 76);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .en_msg_section .input_section textarea{
+            width: 90%;
+            height: 80%;
+        }
+
         .hide{
             display: none;
         }
@@ -81,11 +104,23 @@
 
 </head>
 <body>
-    <h1>Secret Message Creater</h1>
+    <h1>Secret Message Genrator</h1>
 
-    <div class="btn_container">
+    <div class="btn_container hide">
         <button id="encrypt">Encrypt Message</button>
         <button id="decrypt">Decrypt Message</button>
+    </div>
+
+
+    <!-- encryt message box section start -->
+
+    <div class="en_msg_section">
+        <div class="input_section">
+            <textarea name="input_msg" id="input_msg" cols="30" rows="10" placeholder="Enter your message here..."></textarea>
+            <button id="process_btn">Encrypt Your Message</button>
+        </div>
+
+        <div class="output_section"></div>
     </div>
 
 
