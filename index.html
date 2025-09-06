@@ -154,10 +154,45 @@
         .hide{
             display: none;
         }
+
+        @media (max-width: 768px) {
+
+            h1{
+                font-size: 2.5rem;
+                margin-top: 2rem;
+            }
+
+            .en_msg_section, .dec_msg_section{
+                flex-direction: column;
+                height: auto;
+                margin-bottom: 5rem;
+            }
+
+            .en_msg_section .input_section, .en_msg_section .output_section, .dec_msg_section .input_section, .dec_msg_section .output_section{
+                width: 100%;
+                height: auto;
+            }
+
+            .en_msg_section .input_section textarea, .en_msg_section .output_section textarea, .dec_msg_section .input_section textarea, .dec_msg_section .output_section textarea{
+                width: 80%;
+                max-width: 80%;
+                min-width: 80%;
+                height: 30vh;
+                max-height: 30vh;
+                min-height: 30vh;
+            }
+
+            button{
+                font-size: 2.5rem;
+                padding: 1rem 2rem;
+            }
+        }
+
     </style>
 
 </head>
 <body>
+
     <h1 onclick="location.reload()">Secret Message Genrator</h1>
 
     <div class="btn_container">
