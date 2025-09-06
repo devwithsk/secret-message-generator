@@ -9,11 +9,12 @@ let input_msg = document.getElementById("input_msg");
 let output_msg = document.getElementById("output_msg");
 
 let decrypt_msg = document.querySelector(".dec_msg_section");
-let dec_input_msg = document.getElementById("dec_input_msg");
-let dec_output_msg = document.getElementById("dec_output_msg");
+let dec_input_msg = document.getElementById("input_dec_msg");
+let dec_output_msg = document.getElementById("output_dec_msg");
 let decrypt_msg_btn = document.getElementById("decrypt_msg_btn");
 
 
+// message encryption function
 
 function encryptMessage(message) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
@@ -88,8 +89,60 @@ copy_btn.addEventListener("click", () => {
     alert("Encrypted message copied to clipboard!");
 });
 
+// message decryption function
+
+function decryptMessage(message) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let decrypted = '';
+    for (let i = 0; i < message.length; i++) {
+        const char = message[i];
+        // Ignore space and newline
+        if (char === ' ' || char === '\n') {
+            decrypted += char;
+            continue;
+        }
+        const isUpperCase = char === char.toUpperCase();
+        const lowerChar = char.toLowerCase();
+        // If not an alphabet letter, keep it unchanged
+        if (!alphabet.includes(lowerChar)) {
+            decrypted += char;
+            continue;
+        }
+        const index = alphabet.indexOf(lowerChar);
+        let newIndex;
+        // Odd index: +2 (remember 0-based indexing)
+        if (i % 2 === 0) {
+            newIndex = (index + 2) % 26;
+        }
+        // Even index: -1
+        else {
+            newIndex = (index - 1 + 26) % 26;
+        }
+        let newChar = alphabet[newIndex];
+        if (isUpperCase) {
+            newChar = newChar.toUpperCase();
+        }
+        decrypted += newChar;
+    }
+    return decrypted.split('').reverse().join('');
+}
+
+
+
 decrypt_btn.addEventListener("click", () => {
     btn_container.classList.add("hide");
     title.style.marginTop = "2rem";
     decrypt_msg.classList.remove("hide");
 })
+
+decrypt_msg_btn.addEventListener("click", () => {
+    let message = dec_input_msg.value;
+    if (message.trim() === "") {
+        alert("Please enter a message to decrypt.");
+        return;
+    }
+    let decryptedMessage = decryptMessage(message);
+    console.log(decryptedMessage);
+    dec_output_msg.value = decryptedMessage;
+    
+});
