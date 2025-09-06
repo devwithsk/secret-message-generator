@@ -12,6 +12,7 @@ let decrypt_msg = document.querySelector(".dec_msg_section");
 let dec_input_msg = document.getElementById("input_dec_msg");
 let dec_output_msg = document.getElementById("output_dec_msg");
 let decrypt_msg_btn = document.getElementById("decrypt_msg_btn");
+let dec_copy_btn = document.getElementById("dec_copy_btn");
 
 
 // message encryption function
@@ -145,4 +146,11 @@ decrypt_msg_btn.addEventListener("click", () => {
     console.log(decryptedMessage);
     dec_output_msg.value = decryptedMessage;
     
+});
+
+dec_copy_btn.addEventListener("click", () => {
+    dec_output_msg.select();
+    // output_msg.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    alert("Decrypted message copied to clipboard!");
 });
