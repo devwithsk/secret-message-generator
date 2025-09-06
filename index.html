@@ -38,6 +38,7 @@
             font-weight: 600;
             font-style: normal;
             letter-spacing: 0.1rem;
+            cursor: pointer;
 
         }
 
@@ -74,7 +75,7 @@
             background: linear-gradient(145deg, #100c16, #32293f);
         }
 
-        .en_msg_section{
+        .en_msg_section, .dec_msg_section{
             width: 90%;
             height: 70vh;
             margin-left: 5%;
@@ -115,6 +116,40 @@
             width: 50%;
         }
 
+        .dec_msg_section .input_section, .dec_msg_section .output_section{
+            width:50%;
+            height: 100%;
+            background-color: none;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dec_msg_section .input_section textarea, .dec_msg_section .output_section textarea{
+            width: 50%;
+            height: 100%;
+            min-width: 50%;
+            max-width: 50%;
+            min-height: 65%;
+            max-height: 65%;
+            margin-top: 2rem;
+            border-radius: 1rem;
+            padding: 1rem;
+            border: 0.1rem solid black;
+            outline: none;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1.5rem;
+        }
+
+        .dec_msg_section .input_section textarea, .dec_msg_section .output_section button{
+            width: 50%;
+        }
+
+
 
         .hide{
             display: none;
@@ -123,7 +158,7 @@
 
 </head>
 <body>
-    <h1>Secret Message Genrator</h1>
+    <h1 onclick="location.reload()">Secret Message Genrator</h1>
 
     <div class="btn_container">
         <button id="encrypt">Encrypt Message</button>
@@ -141,6 +176,20 @@
 
         <div class="output_section">
             <textarea name="input_msg" id="output_msg" cols="30" rows="10" placeholder="Your Encrypted Message will appear here..." readonly ></textarea>
+            <button id="copy_btn">Copy</button>
+        </div>
+    </div>
+
+    <!-- decrypt message box section start -->
+
+    <div class="dec_msg_section hide">
+        <div class="input_section">
+            <textarea name="input_msg" id="input_dec_msg" cols="30" rows="20" placeholder="Enter your message here..." autofocus></textarea>
+            <button id="encrypt_msg_btn">Decrypt Your Message</button>
+        </div>
+
+        <div class="output_section">
+            <textarea name="input_msg" id="output_dec_msg" cols="30" rows="10" placeholder="Your Decrypted Message will appear here..." readonly ></textarea>
             <button id="copy_btn">Copy</button>
         </div>
     </div>

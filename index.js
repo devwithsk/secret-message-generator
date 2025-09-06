@@ -8,6 +8,12 @@ let copy_btn = document.getElementById("copy_btn");
 let input_msg = document.getElementById("input_msg");
 let output_msg = document.getElementById("output_msg");
 
+let decrypt_msg = document.querySelector(".dec_msg_section");
+let dec_input_msg = document.getElementById("dec_input_msg");
+let dec_output_msg = document.getElementById("dec_output_msg");
+let decrypt_msg_btn = document.getElementById("decrypt_msg_btn");
+
+
 
 function encryptMessage(message) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
@@ -81,3 +87,9 @@ copy_btn.addEventListener("click", () => {
     document.execCommand("copy");
     alert("Encrypted message copied to clipboard!");
 });
+
+decrypt_btn.addEventListener("click", () => {
+    btn_container.classList.add("hide");
+    title.style.marginTop = "2rem";
+    decrypt_msg.classList.remove("hide");
+})
